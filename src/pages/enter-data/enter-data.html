@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Items</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--
+<ion-content padding>
+      <div class="pins">
+        <div class="pin">
+          <ion-card>
+            <img src="https://firebasestorage.googleapis.com/v0/b/test-7ded8.appspot.com/o/cheetah.jpg?alt=media&token=3642b102-71f3-435e-85c4-e018376c1e7b"/>
+          </ion-card>
+        </div>
+      </div>
+</ion-content>
+-->
+
+<ion-content padding>
+      <div class="pins">
+        <div class="pin" *ngFor="let item of items | async">
+          <ion-card>
+            <img src={{item.url}}/>
+            <ion-card-content>
+              <ion-card-title>
+                {{item.name}} - ${{item.cost}}
+                </ion-card-title>
+                  <button ion-button clear small color="primary" icon-start (click)="addToCart(item)">
+                    <ion-icon name='share-alt'></ion-icon>
+                    Add to Cart
+                  </button>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+</ion-content>

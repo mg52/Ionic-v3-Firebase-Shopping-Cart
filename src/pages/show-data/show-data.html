@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Shopping Cart</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="list-avatar-page">
+
+      <ion-row *ngFor="let item of theItems | async">
+          <ion-item (click)="openPage(item)">
+              <ion-avatar item-left>
+                  <img [src]="item.url">
+              </ion-avatar>
+              {{ item.name }}
+              <ion-icon item-right name="remove-circle" (click)="decrement(item)"></ion-icon>
+                <p item-right>{{item.count}}</p>
+              <ion-icon item-right name="add-circle" (click)="increment(item)"></ion-icon>
+          </ion-item>
+
+      </ion-row>
+
+<!--
+<ion-row *ngFor="let item of theItems | async">
+  <ion-item (click)="openPage(item)">
+        <ion-avatar item-left>
+          <img [src]="item.url">
+        </ion-avatar>
+        {{item.name}}
+      </ion-item>
+      </ion-row>
+-->
+  <!--
+  <ion-list>
+    <ion-item *ngFor="let item of theItems | async" >
+      <ion-avatar item-start>
+        <img src={{item.url}}/>
+      </ion-avatar>
+      <button ion-item (click)="openPage(item)">
+        {{item.name}}
+      </button>
+      <ion-note item-end>{{item.cost}}</ion-note>
+    </ion-item>
+  </ion-list>
+-->
+
+<!--
+<ion-list #dataList>
+  <ion-item-group>
+  <ion-item-sliding *ngFor="let item of theItems | async"  #slidingItem>
+    <ion-item (click)="openPage(item)">
+    <ion-avatar item-left>
+      <img [src]="item.url">
+    </ion-avatar>
+      {{item.name}}
+
+    <ion-item-options>
+      <button ion-button color="danger" (click)="delete(slidingItem, item)">
+        Delete
+      </button>
+    </ion-item-options>
+</ion-item>
+  </ion-item-sliding>
+</ion-item-group>
+</ion-list>
+-->
+
+</ion-content>

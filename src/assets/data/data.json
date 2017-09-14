@@ -1,0 +1,19 @@
+{
+
+
+  "map": [{
+    "name": "Kadiköy",
+    "lat": 40.992511,
+    "lng": 29.023635,
+    "center": true
+  }, {
+    "name": "Moda",
+    "lat": 40.980850,
+    "lng": 29.021265
+  }, {
+    "name": "Topkapi Palace",
+    "lat": 41.010771,
+    "lng": 28.982987
+  }]
+
+}
